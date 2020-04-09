@@ -1,0 +1,30 @@
+﻿@model GestaoDeCondominio.Models.Apartamento
+
+@{
+    ViewData["Title"] = "Detalhes - Apartamento";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Apartamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bloco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bloco)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

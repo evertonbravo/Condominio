@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GestaoDeCondominio.Models.Apartamento>
+
+@{
+    ViewData["Title"] = "Apartamentos";
+}
+
+<h1>Apartamento</h1>
+
+<p>
+    <a asp-action="Create">Novo Apartamento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bloco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bloco)
+            </td>           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

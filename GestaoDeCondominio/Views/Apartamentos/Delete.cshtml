@@ -1,0 +1,33 @@
+﻿@model GestaoDeCondominio.Models.Apartamento
+
+@{
+    ViewData["Title"] = "Excluir -  Apartamento";
+}
+
+<h1>Delete</h1>
+
+<h3>Deseja excluir este Apartamento?</h3>
+<div>
+    <h4>Apartamento</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bloco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bloco)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="Index">voltar</a>
+    </form>
+</div>
